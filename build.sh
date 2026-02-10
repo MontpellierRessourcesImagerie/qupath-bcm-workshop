@@ -4,6 +4,11 @@
 mkdir -p build/exercises
 mkdir -p build/lectures
 
+# Convert index notebook if it exists
+if [ -f "index.ipynb" ]; then
+    jupyter nbconvert --to html "index.ipynb" --output-dir="build"
+fi
+
 # Convert all notebooks in exercises
 find exercises -name "*.ipynb" -type f | while read notebook; do
     # Get relative path
