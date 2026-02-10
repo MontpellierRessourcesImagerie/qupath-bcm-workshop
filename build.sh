@@ -4,6 +4,11 @@
 mkdir -p build/exercises
 mkdir -p build/lectures
 
+# Copy media folder if it exists
+if [ -d "media" ]; then
+    cp -r media build/
+fi
+
 # Convert index notebook if it exists
 if [ -f "index.ipynb" ]; then
     jupyter nbconvert --to html "index.ipynb" --output-dir="build"
