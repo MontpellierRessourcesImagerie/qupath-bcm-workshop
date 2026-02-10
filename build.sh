@@ -40,4 +40,6 @@ find lectures -name "*.ipynb" -type f | while read notebook; do
     jupyter nbconvert --to html "$notebook" --output-dir="build/lectures/$dir_path"
 done
 
+python postprocess.py
+
 echo "Build complete!"
