@@ -22,6 +22,19 @@ def inject_css_into_html_folder(folder, css_file):
         if css_content not in style_tag.text:
             style_tag.string = (style_tag.string or "") + "\n" + css_content
 
+        # Add "kenney" class to images with alt starting with "Kenney-"
+        for img in soup.find_all("img", alt=True):
+            if img["alt"].startswith("Kenney-"):
+                existing_classes = img.get("class", [])
+                if "kenney" not in existing_classes:
+                    existing_classes.append("kenney")
+                    img["class"] = existing_classes
+            if img["alt"].startswith("QP "):
+                existing_classes = img.get("class", [])
+                if "qupath" not in existing_classes:
+                    existing_classes.append("qupath")
+                    img["class"] = existing_classes
+
         html_path.write_text(str(soup), encoding="utf-8")
 
 # Usage
