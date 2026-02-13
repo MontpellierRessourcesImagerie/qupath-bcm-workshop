@@ -11,8 +11,10 @@
  * @author Pete Bankhead
  */
 
-def input_class = "Lung"
-def output_class = "Hull"
+// Class of the objects used to calculate the convex hull
+def input_class = "Positive"
+// Class given to the convex hull annotation
+def output_class = "Region*"
 selectObjectsByClassification(input_class);
 def selected = getSelectedObjects()
 def points = []

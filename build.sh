@@ -9,6 +9,11 @@ if [ -d "media" ]; then
     cp -r media build/
 fi
 
+# Copy scripts folder if it exists
+if [ -d "scripts" ]; then
+    cp -r scripts build/
+fi
+
 # Convert index notebook if it exists
 if [ -f "index.ipynb" ]; then
     jupyter nbconvert --to html "index.ipynb" --output-dir="build"
