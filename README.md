@@ -53,6 +53,8 @@
 
 ### To-do
 
+- [ ] Faire le template pour diapos.
+- [ ] Build les diapos en PDF dans un GitHub action.
 - [ ] Write the installation tutorial for all requirements.
 - [X] Write the CSS for the warning and note blocks.
 

@@ -1,1 +1,2 @@
 media/** filter=lfs diff=lfs merge=lfs -text
+slides/** filter=lfs diff=lfs merge=lfs -text
