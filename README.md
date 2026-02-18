@@ -6,7 +6,7 @@
 
 - Create your notebooks in the `lectures` or `exercises` folder. The content of these folders is automatically converted to HTML.
 - Reference them either in the **index** or in other notebooks so they are reachable.
-- The content of `media` is automatically pushed to the LFS, so you can put your illustrations there (no heavy data).
+- The content of `media` and `slides` is automatically pushed to the LFS, so you can put your illustrations there (no heavy data).
 - You can locally test to build HTML pages using the building instructions (below).
 
 ### Custom CSS
@@ -38,8 +38,8 @@
 
 - Tips, warning and notes must be in their own notebook cell.
 - This kind of block is generated using the cell's tags in the IPYNB.
-- In VS Code, you can do right-click > "add cell tag"
-- Possible values:
+- In VS Code, you can do right-click > "add cell tag" once you are in rendering mode (not cell editing mode).
+- Possible values (case sensitive):
     - "tip"
     - "warning"
     - "note"
@@ -53,8 +53,5 @@
 
 ### To-do
 
-- [ ] Faire le template pour diapos.
-- [ ] Build les diapos en PDF dans un GitHub action.
-- [ ] Write the installation tutorial for all requirements.
-- [X] Write the CSS for the warning and note blocks.
-
+- Create a GitHub action to convert the slides to PDF.
+- Write the installation tutorial for all requirements.
