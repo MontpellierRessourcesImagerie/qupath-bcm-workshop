@@ -1,15 +1,13 @@
 // Name to give to each channel:
 channels_name = [
-    "C1",
-    "C2",
-    "C3"
+    "GFP",
+    "BF"
 ];
 
 // According the names that you just gave, what LUT should be used?
 LUTs = [
-    "C1": [255, 0  , 0  ],
-    "C2": [0  , 0  , 255],
-    "C3": [0  , 255, 0  ]
+    "BF": [255, 255  , 255  ],
+    "GFP": [0  , 255  , 0]
 ];
 
 // #############################################################
