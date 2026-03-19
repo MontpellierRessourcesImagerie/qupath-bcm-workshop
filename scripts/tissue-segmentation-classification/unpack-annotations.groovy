@@ -71,6 +71,10 @@ def paths      = asJsonPath()
 def jsonPath   = paths[0]
 def targetPath = paths[1]
 
+def merge_all  = true
+def prefix     = "GT_"
+
+
 if (jsonPath == null) {
     print("No JSON annotation file found for the current image.")
     return
@@ -93,6 +97,7 @@ def jsonText = new File(jsonPath.toString()).getText("UTF-8")
 
 def gson = new Gson()
 def object = gson.fromJson(jsonText, List)
+def objects = []
 
 for (it: object) {
     if (it['type'] != "Feature") { continue; }
@@ -114,7 +119,16 @@ for (it: object) {
     def roi = ROIs.createPolygonROI(xArr, yArr);
     def obj = PathObjects.createAnnotationObject(roi);
     if (targetClass != null) {
-        obj.setClassification(targetClass[0])
+        obj.setClassification(prefix + targetClass[0])
     }
     addObject(obj)
+    objects << obj
 }
+
+if (merge_all) {
+    mergeAnnotations(objects)
+    objs = getSelectedObjects()
+    for (obj: objs) { obj.setLocked(true) }
+}
+
+

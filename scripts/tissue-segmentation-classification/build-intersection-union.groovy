@@ -13,13 +13,15 @@ import qupath.lib.objects.PathObjects
 import qupath.lib.regions.ImagePlane
 import qupath.lib.roi.ROIs
 
+def target_class = "XXX"
+
 // Input classes
-def gt_class = "Glomerulus"
-def pred_class = "Pred_Glomerus"
+def gt_class = "GT_" + target_class
+def pred_class = "Pred_" + target_class
 
 // Output classes
-def inter_class = "Inter_Target"
-def union_class = "Union_Target"
+def inter_class = "Inter_" + target_class
+def union_class = "Union_" + target_class
 
 def getAnnotationsByClass = { className ->
     getAnnotationObjects().findAll { obj ->

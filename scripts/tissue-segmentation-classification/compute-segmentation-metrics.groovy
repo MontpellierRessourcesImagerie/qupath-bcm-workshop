@@ -9,13 +9,15 @@
 
 import org.locationtech.jts.operation.union.UnaryUnionOp
 
-// Input classes
-def gt_class = "Glomerulus"
-def pred_class = "Pred_Glomerus"
+def target_class = "XXX"
 
-// Optional precomputed classes from build-intersection-union.groovy
-def inter_class = "Inter_Target"
-def union_class = "Union_Target"
+// Input classes
+def gt_class = "GT_" + target_class
+def pred_class = "Pred_" + target_class
+
+// Output classes
+def inter_class = "Inter_" + target_class
+def union_class = "Union_" + target_class
 
 // Prefix used in exported measurement names
 def measurement_prefix = "SegQC "

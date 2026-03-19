@@ -9,6 +9,11 @@ if [ -d "media" ]; then
     cp -r media build/
 fi
 
+# Copy pdfs folder if it exists
+if [ -d "pdfs" ]; then
+    cp -r pdfs build/
+fi
+
 # Copy scripts folder if it exists
 if [ -d "scripts" ]; then
     cp -r scripts build/
